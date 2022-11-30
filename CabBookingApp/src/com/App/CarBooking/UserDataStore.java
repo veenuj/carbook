@@ -58,6 +58,13 @@ public static void main(String[] args) {
 			for(carDetails tStudent: cabDetails) {
 				System.out.println(tStudent);
 			}
+
+			System.out.println("Passenger Details: "+ userDetails.getPessangerName());
+
+			PassengerDetails passDetails = session.get(PassengerDetails.class, userDetails.getId());
+
+
+			System.out.println("Data of passenger stored : "+ passDetails);
 			// commit transaction
 			
 			session.getTransaction().commit();
