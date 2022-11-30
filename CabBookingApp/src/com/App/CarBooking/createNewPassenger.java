@@ -49,20 +49,6 @@ public class createNewPassenger {
 			
 
 			
-			// query students
-			
-			@SuppressWarnings("unchecked")
-			List<carDetails> cabDetails = session.createQuery("from carDetails").list();
-		
-			
-			// display students
-			
-			
-			for(carDetails tStudent: cabDetails) {
-				System.out.println(tStudent);
-			}
-		
-			
 			
 			
 			// commit transaction
