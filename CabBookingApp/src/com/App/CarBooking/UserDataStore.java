@@ -47,7 +47,16 @@ public static void main(String[] args) {
 			// save student object
 			System.out.println("Loading the cars You want to choose");
 			session.save(userDetails);
+			@SuppressWarnings("unchecked")
+			List<carDetails> cabDetails = session.createQuery("from carDetails").list();
+		
 			
+			// display students
+			
+			
+			for(carDetails tStudent: cabDetails) {
+				System.out.println(tStudent);
+			}
 			// commit transaction
 			
 			session.getTransaction().commit();
