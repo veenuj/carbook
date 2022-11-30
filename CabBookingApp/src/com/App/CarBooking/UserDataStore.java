@@ -15,6 +15,7 @@ public static void main(String[] args) {
 		SessionFactory factory = new Configuration()
 									.configure("hibernate.cfg.xml")
 									.addAnnotatedClass(PassengerDetails.class)
+									.addAnnotatedClass(carDetails.class)
 									.buildSessionFactory();
 		
 	
