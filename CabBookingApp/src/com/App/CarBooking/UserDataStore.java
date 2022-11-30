@@ -15,6 +15,7 @@ public static void main(String[] args) {
 		SessionFactory factory = new Configuration()
 									.configure("hibernate.cfg.xml")
 									.addAnnotatedClass(PassengerDetails.class)
+									.addAnnotatedClass(carDetails.class)
 									.buildSessionFactory();
 		
 	
@@ -47,7 +48,23 @@ public static void main(String[] args) {
 			// save student object
 			System.out.println("Loading the cars You want to choose");
 			session.save(userDetails);
+			@SuppressWarnings("unchecked")
+			List<carDetails> cabDetails = session.createQuery("from carDetails").list();
+		
 			
+			// display students
+			
+			
+			for(carDetails tStudent: cabDetails) {
+				System.out.println(tStudent);
+			}
+
+			System.out.println("Passenger Details: "+ userDetails.getPessangerName());
+
+			PassengerDetails passDetails = session.get(PassengerDetails.class, userDetails.getId());
+
+
+			System.out.println("Data of passenger stored : "+ passDetails);
 			// commit transaction
 			
 			session.getTransaction().commit();
