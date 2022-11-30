@@ -1,0 +1,10 @@
+1. first create USER using this code 
+			CREATE USER 'car'@'localhost' IDENTIFIED BY 'car';
+			GRANT ALL PRIVILEGES ON * . * TO 'car'@'localhost';
+2. now create DB into car user by running this createPassengerdb.sql in MySQL workbench
+3. now open folder "CarBookingApp"
+4. Now open folder "src" and look for "createNewPassenger.java"
+			for entering the data of passenger 
+			and passenger will get list of cars.
+5. for create query open "üpdatePassenger.java" to update details into passenger db 
+ 
